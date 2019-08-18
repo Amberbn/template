@@ -1,0 +1,78 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "2c751d76-0cf9-4bf3-810b-69a045926ba4": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 508,
+                    "y": 89
+                },
+                "z": 0,
+                "isassociatedwith": [
+                    "30415d87-844a-456d-8333-8e464b568f58"
+                ]
+            },
+            "30415d87-844a-456d-8333-8e464b568f58": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 255,
+                    "y": 67
+                },
+                "z": 0
+            },
+            "b6690719-2a3c-4c96-9d81-e002c47dbf19": {
+                "source": {
+                    "id": "2c751d76-0cf9-4bf3-810b-69a045926ba4"
+                },
+                "target": {
+                    "id": "30415d87-844a-456d-8333-8e464b568f58"
+                },
+                "z": 1
+            }
+        }
+    },
+    "Resources": {
+        "EC2I4R70O": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "AvailabilityZone": "ap-southeast-1a",
+                "InstanceType": "t2.nano",
+                "ImageId": "ami-08569b978cc4dfa10",
+                "KeyName": "key-pair-aji-2",
+                "SecurityGroupIds": [
+                    {
+                        "Ref": "EC2SGWU2W"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "2c751d76-0cf9-4bf3-810b-69a045926ba4"
+                }
+            }
+        },
+        "EC2SGWU2W": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "new-sec-group"
+                "SecurityGroupIngress": {
+                    "CidrIp": "0.0.0.0/0",
+                    "IpProtocol" : "-1",    
+                },
+                
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "30415d87-844a-456d-8333-8e464b568f58"
+                }
+            }
+        }
+    }
+}
